@@ -5,7 +5,7 @@
     <string name="app_name">Strengthlog</string>
     <string name="clock">0:00</string>
     <string name="buttonGoText">go"</string>
-    <string name="buttonStopText">go"</string>
-    <string name="buttonResetText">go"</string>
+    <string name="buttonStopText">stop"</string>
+    <string name="buttonResetText">reset"</string>
 
 </resources>
