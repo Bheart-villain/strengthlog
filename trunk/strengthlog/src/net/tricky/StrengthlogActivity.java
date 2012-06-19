@@ -5,6 +5,7 @@ import net.tricky.clock.CountdownTimer;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.view.View;
 import android.widget.TextView;
 
 public class StrengthlogActivity extends Activity {
@@ -33,15 +34,15 @@ public class StrengthlogActivity extends Activity {
         countdownTimer = new CountdownTimer(UPDATEDELAY,TIMERDURATION,mCountdownView);
     }
     
-    public void buttonGo(){
+    public void buttonGo(View v){
     	countdownTimer.startClock();
     }
     
-    public void buttonStop(){
+    public void buttonStop(View v){
     	countdownTimer.stopClock();
     }
     
-    public void buttonResetClock(){
+    public void buttonResetClock(View v){
     	countdownTimer.resetClock();
     }
     
