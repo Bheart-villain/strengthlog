@@ -7,6 +7,41 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
-
+        android:gravity="center"
+        android:id="@+id/clock"
+        android:textSize="72sp"
+        android:textStyle="bold"
+        android:text="@string/clock" />
+    
+     <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/countdown"
+        android:textSize="72sp"
+        android:textStyle="bold"
+        android:text="@string/clock" />
+     
+     <Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/buttonGoText" 
+		android:textStyle="bold"
+		android:onClick="buttonGo"
+		/>
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/buttonStopText" 
+		android:textStyle="bold"
+		android:onClick="buttonStop"
+		/>
+	
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/buttonResetText" 
+		android:textStyle="bold"
+		android:onClick="buttonResetClock"
+		/>
+     
+    
+    
 </LinearLayout>
