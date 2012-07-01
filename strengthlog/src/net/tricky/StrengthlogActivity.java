@@ -6,14 +6,19 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-public class StrengthlogActivity extends Activity {
+public class StrengthlogActivity extends Activity implements OnItemSelectedListener{
 	
-	static final int TIMERDURATION=240;
+	static final int DEFAULTDURATION = 240;
 	static final int UPDATEDELAY=220;
 	
 	long appStartMillis=0;
+	int countdownDuration;
 	
 	Clock elapsedTime;
 	CountdownTimer countdownTimer;
@@ -28,10 +33,18 @@ public class StrengthlogActivity extends Activity {
         TextView mTimeView = (TextView)findViewById(R.id.clock);
         TextView mCountdownView = (TextView)findViewById(R.id.countdown);
         
+        Spinner spinner = (Spinner) findViewById(R.id.countdownSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.time_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+        
         elapsedTime = new Clock(UPDATEDELAY,mTimeView);
         elapsedTime.startClock();
         
-        countdownTimer = new CountdownTimer(UPDATEDELAY,TIMERDURATION,mCountdownView);
+        countdownDuration=DEFAULTDURATION;
+        countdownTimer = new CountdownTimer(UPDATEDELAY,countdownDuration,mCountdownView);
     }
     
     public void buttonGo(View v){
@@ -43,7 +56,16 @@ public class StrengthlogActivity extends Activity {
     }
     
     public void buttonResetClock(View v){
-    	countdownTimer.resetClock();
+    	TextView mCountdownView = (TextView)findViewById(R.id.countdown);
+        countdownTimer = new CountdownTimer(UPDATEDELAY,countdownDuration,mCountdownView);
+    }
+    
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id){
+    	countdownDuration= Integer.parseInt(((String)parent.getItemAtPosition(pos)));
+    }
+    
+    public void onNothingSelected(AdapterView<?> parent){
+    	countdownDuration = DEFAULTDURATION;   	
     }
     
     public void onResume(){
