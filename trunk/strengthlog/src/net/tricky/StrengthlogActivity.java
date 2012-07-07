@@ -3,7 +3,9 @@ package net.tricky;
 import net.tricky.clock.Clock;
 import net.tricky.clock.CountdownTimer;
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,6 +19,9 @@ public class StrengthlogActivity extends Activity implements OnItemSelectedListe
 	static final int DEFAULTDURATION = 240;
 	static final int UPDATEDELAY=220;
 	
+	protected Dialog mSplashDialog;
+	protected final Handler mHandler= new Handler();
+	
 	long appStartMillis=0;
 	int countdownDuration;
 	
@@ -27,6 +32,8 @@ public class StrengthlogActivity extends Activity implements OnItemSelectedListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
+        showSplashScreen();
+    
         appStartMillis = SystemClock.uptimeMillis();
         
         setContentView(R.layout.main);
@@ -45,6 +52,29 @@ public class StrengthlogActivity extends Activity implements OnItemSelectedListe
         
         countdownDuration=DEFAULTDURATION;
         countdownTimer = new CountdownTimer(UPDATEDELAY,countdownDuration,mCountdownView);
+    }
+    
+    protected void showSplashScreen(){
+    	mSplashDialog = new Dialog(this, R.style.SLTheme_Splash);
+        mSplashDialog.setContentView(R.layout.title);
+        mSplashDialog.setCancelable(false);
+        mSplashDialog.show();
+         
+        // Set Runnable to remove splash screen just in case
+        mHandler.postDelayed(new Runnable() {
+          @Override
+          public void run() {
+            removeSplashScreen();
+          }
+        }, 3000);
+    	
+    }
+    
+    protected void removeSplashScreen() {
+        if (mSplashDialog != null) {
+            mSplashDialog.dismiss();
+            mSplashDialog = null;
+        }
     }
     
     public void buttonGo(View v){
