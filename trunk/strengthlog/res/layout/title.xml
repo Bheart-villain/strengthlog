@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/SLTheme.Splash"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:gravity="center_horizontal|center_vertical"
     android:orientation="vertical" >
-    
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_screen"
         android:gravity="center"
-		android:textSize="48sp"
-	    android:textStyle="bold"
-        />
+        android:text="@string/title_screen"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/progressBarTitle"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="visible" />
     
 </LinearLayout>
