@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/clock"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/clock"
+        android:textSize="72sp"
+        android:textStyle="bold" />
+	<LinearLayout android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:orientation="horizontal">
+	    
+	    <TextView
+	        android:id="@+id/countdown"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:gravity="center"
+	        android:text="@string/clock"
+	        android:textSize="72sp"
+	        android:textStyle="bold" />
+	    
+	    <Spinner
+	        android:id="@+id/countdownSpinner"
+	        android:layout_weight="0"
+	        android:layout_gravity="right"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content" />
+	    
+    </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonGo"
+        android:text="@string/buttonGoText"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonStop"
+        android:text="@string/buttonStopText"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonResetClock"
+        android:text="@string/buttonResetText"
+        android:textStyle="bold" />
+
+</LinearLayout>
