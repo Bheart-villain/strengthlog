@@ -2,6 +2,7 @@ package net.tricky;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -53,10 +54,21 @@ public class StrengthlogActivity extends Activity {
     }
     
     public void buttonGo(View v){
+    	Intent myIntent = new Intent(v.getContext(), WorkoutActivity.class);
+        startActivity(myIntent);
 
     }
     
     public void buttonPlan(View v){
+    	Intent myIntent = new Intent(v.getContext(), PlanActivity.class);
+        startActivity(myIntent);
+    	
+    }
+    
+    public void buttonLog(View v){
+    	Intent myIntent = new Intent(v.getContext(), LogActivity.class);
+        startActivity(myIntent);
+    
     }
     
     
