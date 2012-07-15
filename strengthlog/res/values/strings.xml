@@ -3,9 +3,9 @@
 
     <string name="app_name">StrongGeek</string>
     <string name="clock">0:00</string>
-    <string name="buttonGoText">go"</string>
-    <string name="buttonStopText">stop"</string>
-    <string name="buttonResetText">reset"</string>
+    <string name="buttonGoNextText">W/O (default)</string>
+    <string name="buttonPlanText">Plan</string>
+    <string name="buttonLogsText">Logs</string>
     <string name="title_screen">StrongGEEK</string>
     
     <string-array name="time_array">

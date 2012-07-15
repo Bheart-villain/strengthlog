@@ -39,7 +39,9 @@ public class StrengthlogActivity extends Activity {
           public void run() {
             removeSplashScreen();
           }
-        }, 3000);
+        }, 1000);
+        
+        //TODO reset this to be a more appropriate time
     	
     }
     
@@ -54,7 +56,7 @@ public class StrengthlogActivity extends Activity {
 
     }
     
-    public void buttonStop(View v){
+    public void buttonPlan(View v){
     }
     
     
