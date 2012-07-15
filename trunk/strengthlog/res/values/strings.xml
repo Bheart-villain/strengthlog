@@ -6,6 +6,9 @@
     <string name="buttonGoNextText">W/O (default)</string>
     <string name="buttonPlanText">Plan</string>
     <string name="buttonLogsText">Logs</string>
+    <string name="workoutLabel">Workout</string>
+    <string name="logLabel">Logs</string>
+    <string name="planLabel">Plan</string>
     <string name="title_screen">StrongGEEK</string>
     
     <string-array name="time_array">
