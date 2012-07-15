@@ -35,25 +35,5 @@
 	    
     </LinearLayout>
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonGo"
-        android:text="@string/buttonGoText"
-        android:textStyle="bold" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonStop"
-        android:text="@string/buttonStopText"
-        android:textStyle="bold" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonResetClock"
-        android:text="@string/buttonResetText"
-        android:textStyle="bold" />
 
 </LinearLayout>

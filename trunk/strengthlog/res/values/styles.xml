@@ -4,11 +4,7 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-    <style name="SLTheme.Splash" parent="@android:style/Theme">
+    <style name="SLTheme.Splash" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen">
         <item name="android:padding">0dp</item>
-        <item name="android:windowBackground">@android:color/black</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFrame">@null</item>
     </style>
 </resources>
