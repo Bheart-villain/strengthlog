@@ -15,7 +15,7 @@ public class Clock implements Runnable{
 	private boolean running = false;
 	
 	//singleton
-	//TODO: This necessary? (are Handlers thread-specific?
+	//TODO: This necessary? (are Handlers thread-specific?)
 	protected static Handler mHandler=null;
 	public static Handler getHandler(){
 		if (mHandler==null){
